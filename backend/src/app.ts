@@ -5,6 +5,8 @@ import agentRoutes from "./routes/agent.routes.js";
 import serviceRoutes from "./routes/service.routes.js";
 import paidRoutes from "./routes/paid.routes.js";
 import ratingRoutes from "./routes/rating.routes.js";
+import reputationRoutes from "./routes/reputation.routes.js";
+import agentProfileRoutes from "./routes/agentProfile.routes.js";
 
 import { x402Middleware } from "./middleware/x402.middleware.js";
 
@@ -18,19 +20,16 @@ app.use(express.json());
  * x402 protected routes
  */
 
-app.use("/paid", (req, res, next) => {
-  console.log("X402 HIT");
-  next();
-});
-
-app.use("/paid", x402Middleware);
-
-app.use("/paid", paidRoutes);
-
-app.use("/ratings", ratingRoutes);
+app.use("/paid", x402Middleware, paidRoutes);
 
 app.use("/agents", agentRoutes);
 
 app.use("/services", serviceRoutes);
+
+app.use("/reputation", reputationRoutes);
+
+app.use("/ratings", ratingRoutes);
+
+app.use("/agent-profile", agentProfileRoutes);
 
 export default app;
