@@ -4,6 +4,7 @@ import cors from "cors";
 import agentRoutes from "./routes/agent.routes.js";
 import serviceRoutes from "./routes/service.routes.js";
 import paidRoutes from "./routes/paid.routes.js";
+import ratingRoutes from "./routes/rating.routes.js";
 
 import { x402Middleware } from "./middleware/x402.middleware.js";
 
@@ -18,13 +19,15 @@ app.use(express.json());
  */
 
 app.use("/paid", (req, res, next) => {
-  console.log("PAID REQUEST:", req.path);
+  console.log("X402 HIT");
   next();
 });
 
 app.use("/paid", x402Middleware);
 
 app.use("/paid", paidRoutes);
+
+app.use("/ratings", ratingRoutes);
 
 app.use("/agents", agentRoutes);
 

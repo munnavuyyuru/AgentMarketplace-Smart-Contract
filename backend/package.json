@@ -15,12 +15,14 @@
   "description": "",
   "dependencies": {
     "@supabase/supabase-js": "^2.108.2",
+    "@x402/core": "^2.15.0",
+    "@x402/evm": "^2.15.0",
+    "@x402/express": "^2.15.0",
+    "@x402/paywall": "^2.15.0",
     "cors": "^2.8.6",
     "dotenv": "^17.4.2",
     "ethers": "^6.16.0",
-    "express": "^5.2.1",
-    "x402": "^1.2.0",
-    "x402-express": "^1.2.0"
+    "express": "^5.2.1"
   },
   "devDependencies": {
     "@types/cors": "^2.8.19",
