@@ -7,6 +7,7 @@ import paidRoutes from "./routes/paid.routes.js";
 import ratingRoutes from "./routes/rating.routes.js";
 import reputationRoutes from "./routes/reputation.routes.js";
 import agentProfileRoutes from "./routes/agentProfile.routes.js";
+import dashboardRoutes from "./routes/dashboard.routes.js";
 
 import { x402Middleware } from "./middleware/x402.middleware.js";
 
@@ -23,13 +24,10 @@ app.use(express.json());
 app.use("/paid", x402Middleware, paidRoutes);
 
 app.use("/agents", agentRoutes);
-
 app.use("/services", serviceRoutes);
-
+app.use("/dashboard", dashboardRoutes);
 app.use("/reputation", reputationRoutes);
-
 app.use("/ratings", ratingRoutes);
-
 app.use("/agent-profile", agentProfileRoutes);
 
 export default app;
