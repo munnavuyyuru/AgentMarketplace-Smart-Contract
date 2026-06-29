@@ -6,12 +6,15 @@ import AgentProfilePage from "./pages/AgentProfilePage";
 import PurchasesPage from "./pages/PurchasesPage";
 import DeliverablePage from "./pages/DeliverablePage";
 import CreateServicePage from "./pages/CreateServicePage";
+import RegisterAgentPage from "./pages/RegisterAgentPage";
 
 export default function App() {
   return (
     <BrowserRouter>
       <Routes>
         <Route path="/" element={<HomePage />} />
+
+        <Route path="/register-agent" element={<RegisterAgentPage />} />
 
         <Route path="/create-service" element={<CreateServicePage />} />
 
